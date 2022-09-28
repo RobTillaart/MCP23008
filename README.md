@@ -35,24 +35,24 @@ Can be overruled with Wire0..WireN.
 
 ### Single pin interface
 
-- **bool pinMode(uint8_t pin, uint8_t mode)** pin = 0..7, mode = INPUT, OUTPUT, returns true if successful.
+- **bool pinMode(uint8_t pin, uint8_t mode)** pin = 0..7, mode = INPUT, OUTPUT. Returns true if successful.
 - **bool digitalWrite(uint8_t pin, uint8_t value)** pin = 0..7, value = LOW(0) HIGH (!0). Returns true if successful.
 - **uint8_t digitalRead(uint8_t pin)** pin = 0..7, returns LOW or HIGH, might set the lastError();
 - **bool setPolarity(uint8_t pin, bool reversed)** pin = 0..7, set reversed flag. Returns true if successful.
-- **bool getPolarity(uint8_t pin, bool &reversed)** pin = 0..7, reads reversed flag, returns true if successful.
-- **bool setPullup(uint8_t pin, bool pullup)** pin = 0..7, set pull-up flag, returns true if successful.
-- **bool getPullup(uint8_t pin, bool &pullup)** pin = 0..7, reads pull-up flag, returns true if successful.
+- **bool getPolarity(uint8_t pin, bool &reversed)** pin = 0..7, reads reversed flag. Returns true if successful.
+- **bool setPullup(uint8_t pin, bool pullup)** pin = 0..7, set pull-up flag. Returns true if successful.
+- **bool getPullup(uint8_t pin, bool &pullup)** pin = 0..7, reads pull-up flag. Returns true if successful.
 
 
 ### 8 pins interface
 
-- **bool pinMode8(uint8_t value)** value = 0..255, returns true if successful.
-- **bool write8(uint8_t value)** value = 0..255, returns true if successful.
+- **bool pinMode8(uint8_t value)** value = 0..255. Returns true if successful.
+- **bool write8(uint8_t value)** value = 0..255. Returns true if successful.
 - **uint8_t read8()** reads 8 pins into one byte.
-- **bool setPolarity8(uint8_t mask)** sets polarity for 8 channels at once.
-- **bool getPolarity8(uint8_t &mask)** reads polarity of 8 channels at once.
-- **bool setPullup8(uint8_t mask)** sets pull-up for 8 channels at once.
-- **bool getPullup8(uint8_t &mask)** reads pull-up for 8 channels at once.
+- **bool setPolarity8(uint8_t mask)** sets polarity for 8 channels at once. Returns true if successful.
+- **bool getPolarity8(uint8_t &mask)** reads polarity of 8 channels at once. Returns true if successful.
+- **bool setPullup8(uint8_t mask)** sets pull-up for 8 channels at once. Returns true if successful.
+- **bool getPullup8(uint8_t &mask)** reads pull-up for 8 channels at once. Returns true if successful.
 
 
 ### Error codes
