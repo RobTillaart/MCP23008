@@ -20,42 +20,42 @@ void setup()
   MCP.begin();
 
   MCP.pinMode8(0x00);    // 0 = output , 1 = input
-  uint8_t value = mcp.getPinMode8();
+  uint8_t value = MCP.getPinMode8();
   Serial.println(value, HEX);
 
   MCP.pinMode8(0xFF);
-  value = mcp.getPinMode8();
+  value = MCP.getPinMode8();
   Serial.println(value, HEX);
 
   Serial.println();
   for (int i = 0; i < 8; i++)
   {
-    mcp.pinmode(i, OUTPUT);
-    value = mcp.getPinMode8();
+    MCP.pinMode(i, OUTPUT);
+    value = MCP.getPinMode8();
     Serial.println(value, HEX);
   }
 
   Serial.println();
   for (int i = 0; i < 8; i++)
   {
-    mcp.pinmode(i, INPUT);
-    value = mcp.getPinMode8();
+    MCP.pinMode(i, INPUT);
+    value = MCP.getPinMode8();
     Serial.println(value, HEX);
   }
 
   Serial.println();
   for (int i = 0; i < 8; i++)
   {
-    mcp.pinmode(i, OUTPUT);
-    value = mcp.getPinMode8();
+    MCP.pinMode(i, OUTPUT);
+    value = MCP.getPinMode8();
     Serial.println(value, HEX);
   }
 
   Serial.println();
   for (int i = 0; i < 8; i++)
   {
-    mcp.pinmode(i, INPUT_PULLUP);
-    value = mcp.getPinMode8();
+    MCP.pinMode(i, INPUT_PULLUP);
+    value = MCP.getPinMode8();
     Serial.println(value, HEX);
   }
 
