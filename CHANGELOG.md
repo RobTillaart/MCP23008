@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - add CMakeLists.txt #8
 - add debug function **uint8_t getPinMode8()**
 - add keywords.txt
-
+- update examples
 
 
 ## [0.1.3] - 2023-02-04
