@@ -33,6 +33,7 @@ public:
   bool     isConnected();
   uint8_t  getAddress();
 
+
   //       single pin interface
   //       mode: 0 = OUTPUT, 1 = INPUT, 1 = INPUT_PULLUP (==INPUT)
   bool     pinMode1(uint8_t pin, uint8_t mode);
@@ -70,15 +71,12 @@ public:
   bool     setInterruptPolarity(uint8_t polarity);
   uint8_t  getInterruptPolarity();
 
-  //       OTHER
+  //       debugging
   int      lastError();
 
   //       set/clear IOCR bit fields
   bool     enableControlRegister(uint8_t mask);
   bool     disableControlRegister(uint8_t mask);
-  //       0.2.0 experimental
-  bool     enableHardwareAddress();
-  bool     disableHardwareAddress();
 
   //       DEBUG functions
   uint8_t  getPinMode8();

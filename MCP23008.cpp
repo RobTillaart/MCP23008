@@ -12,9 +12,9 @@
 
 MCP23008::MCP23008(uint8_t address, TwoWire *wire)
 {
-  _address  = address;
-  _wire     = wire;
-  _error    = MCP23008_OK;
+  _address = address;
+  _wire    = wire;
+  _error   = MCP23008_OK;
 }
 
 
@@ -462,18 +462,6 @@ bool MCP23008::disableControlRegister(uint8_t mask)
   uint8_t reg = readReg(MCP23x08_IOCR);
   reg &= ~mask;
   return writeReg(MCP23x08_IOCR, reg);
-}
-
-
-bool MCP23008::enableHardwareAddress()
-{
-  return enableControlRegister(MCP23x08_IOCR_HAEN);
-}
-
-
-bool MCP23008::disableHardwareAddress()
-{
-  return disableControlRegister(MCP23x08_IOCR_HAEN);
 }
 
 
