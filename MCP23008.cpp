@@ -27,7 +27,7 @@ bool MCP23008::begin(bool pullup)
   //    SEQOP: Sequential Operation mode bit
   //    1 = Sequential operation disabled, address pointer does not increment.
   //    0 = Sequential operation enabled, address pointer increments.
-  //  if (! writeReg(MCP23x08_IOCR, MCP23S08_IOCR_SEQOP)) return false;
+  //  if (! writeReg(MCP23x08_IOCR, MCP23008_IOCR_SEQOP)) return false;
 
   if (pullup)
   {
@@ -353,7 +353,7 @@ bool MCP23008::enableInterrupt(uint8_t pin, uint8_t mode)
 {
   if (pin > 7)
   {
-    _error = MCP23S08_PIN_ERROR;
+    _error = MCP23008_PIN_ERROR;
     return false;
   }
 
@@ -392,7 +392,7 @@ bool MCP23008::disableInterrupt(uint8_t pin)
 {
   if (pin > 7)
   {
-    _error = MCP23S08_PIN_ERROR;
+    _error = MCP23008_PIN_ERROR;
     return false;
   }
   //  disable interrupt
