@@ -73,6 +73,27 @@ before calling **begin()**.
 - https://github.com/RobTillaart/PCF8574
 
 
+## I2C
+
+
+#### I2C multiplexing
+
+Sometimes you need to control more devices than possible with the default
+address range the device provides.
+This is possible with an I2C multiplexer e.g. TCA9548 which creates up
+to eight channels (think of it as I2C subnets) which can use the complete
+address range of the device.
+
+Drawback of using a multiplexer is that it takes more administration in
+your code e.g. which device is on which channel.
+This will slow down the access, which must be taken into account when
+deciding which devices are on which channel.
+Also note that switching between channels will slow down other devices
+too if they are behind the multiplexer.
+
+- https://github.com/RobTillaart/TCA9548
+
+
 ## Interface
 
 ```cpp
@@ -128,11 +149,6 @@ Reading it will reset the flag to **MCP23008_OK**.
 |  MCP23008_I2C_ERROR    |  0x82   |
 |  MCP23008_VALUE_ERROR  |  0x83   |
 |  MCP23008_PORT_ERROR   |  0x84   |
-
-
-## Operation
-
-See examples.
 
 
 ## Future
