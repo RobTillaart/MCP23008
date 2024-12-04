@@ -77,8 +77,7 @@ bool MCP23008::pinMode1(uint8_t pin, uint8_t mode)
     return false;
   }
 
-  uint8_t dataDirectionRegister = MCP23x08_DDR_A;
-  uint8_t val = readReg(dataDirectionRegister);
+  uint8_t val = readReg(MCP23x08_DDR_A);
   if (_error != MCP23008_OK)
   {
     return false;
@@ -94,7 +93,7 @@ bool MCP23008::pinMode1(uint8_t pin, uint8_t mode)
     val &= ~mask;
   }
   //  other values won't change val ....
-  writeReg(dataDirectionRegister, val);
+  writeReg(MCP23x08_DDR_A, val);
   if (_error != MCP23008_OK)
   {
     return false;
