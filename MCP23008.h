@@ -31,7 +31,7 @@ public:
 
   bool     begin(bool pullup = true);
   bool     isConnected();
-  uint8_t  getAddress();
+  uint8_t  getAddress() const {return _address; }
 
 
   //       single pin interface

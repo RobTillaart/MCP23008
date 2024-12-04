@@ -50,13 +50,6 @@ bool MCP23008::isConnected()
   return true;
 }
 
-
-uint8_t MCP23008::getAddress()
-{
-  return _address;
-}
-
-
 ///////////////////////////////////////////////////////////////////
 //
 //  single pin interface
