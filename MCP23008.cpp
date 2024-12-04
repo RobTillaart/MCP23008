@@ -111,8 +111,7 @@ bool MCP23008::write1(uint8_t pin, uint8_t value)
     _error = MCP23008_PIN_ERROR;
     return false;
   }
-  uint8_t IOR = MCP23x08_GPIO_A;
-  uint8_t val = readReg(IOR);
+  uint8_t val = readReg(MCP23x08_GPIO_A);
   uint8_t pre = val;
   if (_error != MCP23008_OK)
   {
@@ -131,7 +130,7 @@ bool MCP23008::write1(uint8_t pin, uint8_t value)
   //  only write when changed.
   if (pre != val)
   {
-    writeReg(IOR, val);
+    writeReg(MCP23x08_GPIO_A, val);
     if (_error != MCP23008_OK)
     {
       return false;
@@ -148,8 +147,7 @@ uint8_t MCP23008::read1(uint8_t pin)
     _error = MCP23008_PIN_ERROR;
     return MCP23008_INVALID_READ;
   }
-  uint8_t IOR = MCP23x08_GPIO_A;
-  uint8_t val = readReg(IOR);
+  uint8_t val = readReg(MCP23x08_GPIO_A);
   if (_error != MCP23008_OK)
   {
     return MCP23008_INVALID_READ;
@@ -169,8 +167,7 @@ bool MCP23008::setPolarity(uint8_t pin,  bool reversed)
     _error = MCP23008_PIN_ERROR;
     return false;
   }
-  uint8_t inputPolarityRegister = MCP23x08_POL_A;
-  uint8_t val = readReg(inputPolarityRegister);
+  uint8_t val = readReg(MCP23x08_POL_A);
   if (_error != MCP23008_OK)
   {
     return false;
@@ -184,7 +181,7 @@ bool MCP23008::setPolarity(uint8_t pin,  bool reversed)
   {
     val &= ~mask;
   }
-  writeReg(inputPolarityRegister, val);
+  writeReg(MCP23x08_POL_A, val);
   if (_error != MCP23008_OK)
   {
     return false;
@@ -200,8 +197,7 @@ bool MCP23008::getPolarity(uint8_t pin, bool &reversed)
     _error = MCP23008_PIN_ERROR;
     return false;
   }
-  uint8_t inputPolarityRegister = MCP23x08_POL_A;
-  uint8_t val = readReg(inputPolarityRegister);
+  uint8_t val = readReg(MCP23x08_POL_A);
   if (_error != MCP23008_OK)
   {
     return false;
@@ -221,8 +217,7 @@ bool MCP23008::setPullup(uint8_t pin,  bool pullup)
     _error = MCP23008_PIN_ERROR;
     return false;
   }
-  uint8_t inputPullupRegister = MCP23x08_PUR_A;
-  uint8_t val = readReg(inputPullupRegister);
+  uint8_t val = readReg(MCP23x08_PUR_A);
   if (_error != MCP23008_OK)
   {
     return false;
@@ -236,7 +231,7 @@ bool MCP23008::setPullup(uint8_t pin,  bool pullup)
   {
     val &= ~mask;
   }
-  writeReg(inputPullupRegister, val);
+  writeReg(MCP23x08_PUR_A, val);
   if (_error != MCP23008_OK)
   {
     return false;
@@ -252,8 +247,7 @@ bool MCP23008::getPullup(uint8_t pin, bool &pullup)
     _error = MCP23008_PIN_ERROR;
     return false;
   }
-  uint8_t inputPullupRegister = MCP23x08_PUR_A;
-  uint8_t val = readReg(inputPullupRegister);
+  uint8_t val = readReg(MCP23x08_PUR_A);
   if (_error != MCP23008_OK)
   {
     return false;
