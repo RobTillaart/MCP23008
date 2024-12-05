@@ -27,11 +27,11 @@
 class MCP23008
 {
 public:
-  MCP23008(uint8_t address, TwoWire *wire = &Wire);
+  MCP23008(uint8_t address = 0x20, TwoWire *wire = &Wire);
 
   bool     begin(bool pullup = true);
   bool     isConnected();
-  uint8_t  getAddress();
+  uint8_t  getAddress() const {return _address; }
 
 
   //       single pin interface
@@ -93,7 +93,7 @@ protected:
 
   uint8_t   _address;
   TwoWire*  _wire;
-  uint8_t   _error;
+  uint8_t   _error{MCP23008_OK};
 };
 
 

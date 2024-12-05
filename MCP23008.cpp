@@ -11,11 +11,8 @@
 
 
 MCP23008::MCP23008(uint8_t address, TwoWire *wire)
-{
-  _address = address;
-  _wire    = wire;
-  _error   = MCP23008_OK;
-}
+: _address{address}, _wire{wire}
+{}
 
 
 bool MCP23008::begin(bool pullup)
@@ -49,13 +46,6 @@ bool MCP23008::isConnected()
   _error = MCP23008_OK;
   return true;
 }
-
-
-uint8_t MCP23008::getAddress()
-{
-  return _address;
-}
-
 
 ///////////////////////////////////////////////////////////////////
 //
