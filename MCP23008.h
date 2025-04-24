@@ -13,7 +13,7 @@
 #include "MCP23x08_registers.h"
 
 
-#define MCP23008_LIB_VERSION              (F("0.3.4"))
+#define MCP23008_LIB_VERSION              (F("0.3.5"))
 
 #define MCP23008_OK                       0x00
 #define MCP23008_PIN_ERROR                0x81
