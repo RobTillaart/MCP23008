@@ -2,7 +2,7 @@
 //
 //    FILE: MCP23008.h
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.3.4
+// VERSION: 0.3.5
 // PURPOSE: Arduino library for I2C MCP23008 8 channel port expander
 //    DATE: 2022-01-10
 //     URL: https://github.com/RobTillaart/MCP23008
@@ -27,7 +27,7 @@
 class MCP23008
 {
 public:
-  MCP23008(uint8_t address = 0x20, TwoWire *wire = &Wire);
+  MCP23008(uint8_t address, TwoWire *wire = &Wire);
 
   bool     begin(bool pullup = true);
   bool     isConnected();
@@ -48,7 +48,7 @@ public:
 
 
   //       8 pins interface
-  //       mask  = 0x00..0xFF  bit pattern, 
+  //       mask  = 0x00..0xFF  bit pattern,
   //               bit 0 = output mode, bit 1 = input mode
   //       value = bit pattern.
   bool     pinMode8(uint8_t mask);
